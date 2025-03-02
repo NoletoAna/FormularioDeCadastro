@@ -1,0 +1,48 @@
+body {
+    background-color: #ffcbdb;
+    font-family: Cambria;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container {
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+form {
+    padding: 0px 50px 50px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #ffcbdb;
+}
+
+input {
+    width: 80%;
+    margin-top: 15px;
+    color: #ffcbdb;
+    border: 1px solid #ffcbdb;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+#botao {
+    background-color: #ec5e97;
+    border: none;
+    width: 20%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h1 {
+    margin-top: 40px;
+    color: #ec5e97;
+}
+
+h2 {
+    color: #ffcbdb;
+}
