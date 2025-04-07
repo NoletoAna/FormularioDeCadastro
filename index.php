@@ -1,4 +1,3 @@
-<!-- Cabeçalho: estrutura básica de uma página web -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,35 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Cadastro</title>
-    <!-- Link que faz ligação do arquivo "index.html" com a folha de estilo "style.css" -->
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <!-- Uma divisão onde as informações do site estão localizadas. Recebe o ID "container", que é usado no arquivo "style.css" para a estilização-->
-    <div id="container">
-        <!-- Tag de Título de peso 1 -->
+    <nav id="navegacao" class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Cadastrar Alunos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="consultar.php">Consultar Alunos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
         <h1>Seja Bem-Vindo(a)!</h1>
-        <!-- Tag de Título de peso 2 -->
         <h2>Cadastre-se:</h2>
-        <!-- Tag de Formulário de método Post, ou seja, as informações não são enviadas pela URL pois suporta um tamanho maior de informalçoes. O action receberia o nome do arquivo para o qual as informações inseridas pelo usuário no formulário iria.  -->
         <form action="php/inserir.php" method="get">
-            <!-- a tag input indica um espaço no qual o usuário consegue inserir informações. Nesse caso, todos eles recebem informações do tipo texto, o atributo "name" nomeia cada informação que será inserida no formulário e será usado futuramente no envio delas para o banco de dados. O atributo "placeholder" refere-se ao texto localizado dentro de cada input-->
-            <input name="nome" type="text" placeholder="Nome:">
-            <input name="cpf" type="text" placeholder="CPF:">
-            <input name="matricula" type="text" placeholder="Matrícula:">
-            <input name="telefone" type="text" placeholder="Telefone:">
-            <!-- <input name="estado" type="text" placeholder="Estado:"> -->
-            <select id="estados" class="form-select" aria-label="Default select example">
+            <input class="form-control" name="nome" type="text" placeholder="Nome:">
+            <input class="form-control mt-3" name="cpf" type="text" placeholder="CPF:">
+            <input class="form-control mt-3" name="matricula" type="text" placeholder="Matrícula:">
+            <input class="form-control mt-3" name="telefone" type="text" placeholder="Telefone:">
+            <select id="estados" class="form-select mt-3" aria-label="Default select example">
                 <option value="">Selecione um estado</option>
             </select>
-            <input name="cidade" type="text" placeholder="Cidade:">
-            <input name="bairro" type="text" placeholder="Bairro:">
-            <input name="rua" type="text" placeholder="Rua:">
-            <input name="numero" type="text" placeholder="Número:">
+            <input class="form-control mt-3" name="cidade" type="text" placeholder="Cidade:">
+            <input class="form-control mt-3" name="bairro" type="text" placeholder="Bairro:">
+            <input class="form-control mt-3" name="rua" type="text" placeholder="Rua:">
+            <input class="form-control mt-3" name="numero" type="text" placeholder="Número:">
 
-            <!-- Esse input funciona como um botão "type='submit'". Ele será responsável por validar o envio das informações do formulário para o banco de dados. O atributo "value" recebe o que ficará escrito dentro do input-->
-            <input id="botao" type="submit" value="Enviar">
+            <input id="botao" class="btn btn-success mt-3" type="submit" value="Enviar">
 
             <script>
                 const estados = [
@@ -78,6 +86,9 @@
             </script>
         </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

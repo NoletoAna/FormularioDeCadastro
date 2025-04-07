@@ -11,11 +11,11 @@ try {
 
 $i = 1;
 
-if(isset($_GET['cad'])){
-  echo"<script>alert('Dados cadastrados');</script>";
+if (isset($_GET['cad'])) {
+  echo "<script>alert('Dados cadastrados');</script>";
 }
-if(isset($_GET['con'])){
-  echo"<script>alert('Dados alterados');</script>";
+if (isset($_GET['con'])) {
+  echo "<script>alert('Dados alterados');</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -25,35 +25,35 @@ if(isset($_GET['con'])){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consultar</title>
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav id="navegacao" class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.php">Home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cadastrar.php">Cadastrar Alunos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Consultar Alunos</a>
-          </li>
-        </ul>
-      </div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Cadastrar Alunos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="consultar.php">Consultar Alunos</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Pesquisar Aluno" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">
+          <img src="app/public/images/search.svg" class="mb-1" alt="">
+        </button>
+      </form>
     </div>
   </nav>
+
   <div class="container mt-5">
-    <table class="table table-striped">
+    <h1>Consultar Alunos</h1>
+    <h2>Alunos Cadastrados:</h2>
+    <table class="table table-striped mt-3">
       <tr>
         <th>Nº</th>
         <th>Id</th>
@@ -107,7 +107,7 @@ if(isset($_GET['con'])){
             <a class="btn btn-warning" href="alterar.php?id=<?= $valor['id'] ?>">Alterar</a>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
               data-bs-target="#exampleModal<?= $valor['id'] ?>">
               Deletar
             </button>
@@ -126,7 +126,7 @@ if(isset($_GET['con'])){
                     <?= $valor['nome'] ?>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
                     <a class="btn btn-danger" href="php/deletar.php?id=<?= $valor['id'] ?>">Deletar</a>
                   </div>
                 </div>
